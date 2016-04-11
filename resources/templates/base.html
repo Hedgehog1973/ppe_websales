@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/stylesheet/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="/stylesheet/bootstrap-theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="/stylesheet/mainStyle.css" />
+
+		<script src="/script/jquery-1.12.3.min.js"></script>
+		<script src="/script/bootstrap.min.js"></script>
+		<script src="/script/mainjs.js"></script>
+		<!-- <script src="/script/npm.js"></script> -->
+
+		<title>Puerto Plata Express</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="login-area  navbar-text navbar-right">
+				{% if user %}
+					Bienvenido, {{user.username}}<br>
+					<a class="login-link" href="/logout">Cerrar Sesión</a>
+				{% endif %}
+  			</div>
+
+  			<!-- Logo -->
+			<div class="margen-fondo">
+				<a class="logo-link" href="/">
+					<img alt="Puerto Plata Express Logo" class="img-logo center-block img-responsive" src="/img/ppe_logo.png">
+				</a>
+			</div>
+
+			<!-- Navigator -->
+			<ul class="nav topnav">
+				<li><a href="/">Inicio</a></li>
+				<li><a href="/reporte">Reporte de Ventas</a></li>
+				<li><a href="#">Contacto</a></li>
+				<li class="icon">
+					<a href="javascript:void(0);" onclick="navigatorFunction()">&#9776</a>
+				</li>
+			</ul>
+
+			<!-- Content -->
+			<div class="container-fluid">
+				{% block content %}
+				{% endblock %}
+			</div>
+
+		</div>
+	</body>
+</html>
+
+
+
+
+
+
+			<!-- Bootstrap Tabs Container -->
+			<!-- <div class="contenido_tab container-fluid">
+				<ul id="mainTab" class="nav nav-tabs" role="tablist">
+  					<li role="presentation" class="active"><a data-toggle="tab" href="#inicio">Inicio</a></li>
+  					<li role="presentation"><a data-toggle="tab" href="#reporte">Reporte de Ventas</a></li>
+  					<li role="presentation"><a data-toggle="tab" href="#messages">Messages</a></li>
+				</ul>
+			</div>
+ -->
+			<!-- Bootstrap Tabs Contents -->
+			<!-- <div id="tabContent" class="contenido_tab container-fluid tab-content">
+				<div role="tabpanel" class="container-fluid tab-pane fade in active" id="inicio">
+					<p>PROBANDO</p>
+				</div>
+				<div role="tabpanel" class="container-fluid tab-pane" id="reporte">
+					<p>REPORTE</p>
+				</div>
+				<div role="tabpanel" class="container-fluid tab-pane" id="messages">
+					<p>MENSAJES</p>
+				</div>
+			</div> -->

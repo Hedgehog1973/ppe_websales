@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="container center-block login-div">
+		<h1 class="login-title">Iniciar Sesión:</h1>
+		<form class="navbar-form" method="post">
+			<table class="table table-responsive">
+				<tr>
+					<td id="login-td">Usuario:</td>
+					<td id="login-input"><input class="form-control input-lg" type="text" name="username"></td>
+				</tr>
+				<tr>
+					<td id="login-td">Contraseña:</td>
+					<td id="login-input"><input class="form-control input-lg" type="password" name="password"></td>
+				</tr>
+				<tr>
+					<td id="login-td" colspan="2"><div class="error">{{ error_user }}</div></td>
+				</tr>
+			</table>
+			<input class="center-block btn btn-default btn-lg navbar-btn" type="submit">
+		</form>
+	</div>
+{% endblock %}

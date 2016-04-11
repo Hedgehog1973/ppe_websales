@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+	<h1>Reporte de Ventas</h1>
+	<div>
+		<div>
+			<table method="post" class="table table-responsive">
+				<tr>
+					<td class="report-td">Cantidad:</td>
+					<td class="report-td">Libra:</td>
+					<td class="report-td">Destino:</td>
+					<td class="report-td">Compañía:</td>
+					<td class="report-td">País/Ciudad:</td>
+					<td class="report-td">Zona:</td>
+					<td class="report-td">Tracking:</td>
+					<td class="report-td">Precio Venta:</td>
+					<td class="report-td">Precio Neto:</td>
+					<td class="report-td">Nota:</td>
+				</tr>
+				<tr>
+					<td class="report-td"><input class="input-number" type="number" name="cantidad" min="1" max="10" value="1"></td>
+					<td class="report-td"><input class="input-number" type="number" name="libra" min="0" max="150" value="0"></td>
+					<td class="report-td">
+						<select>
+							<option value="0">Internacional</option>
+							<option value="1">Nacional</option>
+						</select>
+					</td>
+					<td class="report-td">
+						<select>
+							<option value="1">UPS</option>
+							<option value="2">FedEx</option>
+							<option value="3">DHL</option>
+						</select>
+					</td>
+					<td class="report-td">
+						<select size="1">
+							{% if paises %}
+								{% for lugar in paises %}
+									<option value="{{lugar}}">{{lugar}}</option>
+								{% endfor %}
+							{% endif %}
+						</select>
+					</td>
+					<td class="report-td"></td>
+					<td class="report-td"></td>
+					<td class="report-td"></td>
+					<td class="report-td"></td>
+					<td class="report-td"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+{% endblock %}
